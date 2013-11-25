@@ -1,0 +1,13 @@
+CELERYD_NODES="<%= hostname %>a <%= hostname %>b <%= hostname %>c"
+CELERY_BIN="/usr/local/bin/celery"
+
+CELERYD_CHDIR="<%= scope.lookupvar('baseconfig::config::project_path') %>"
+
+CELERYD_OPTS="--config=app.config"
+
+CELERYD_LOG_FILE="/var/log/celery/%N.log"
+CELERYD_PID_FILE="/var/run/celery/%N.pid"
+
+CELERYD_USER="celery"
+CELERYD_GROUP="celery"
+CELERY_CREATE_DIRS=1

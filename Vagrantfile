@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
         config.vm.define node[:hostname] do |node_config|
             node_config.vm.box = node[:box]
             node_config.vm.host_name = node[:hostname] + '.' + domain
-            node_config.vm.network :public_network, :public_network => "eth0"
+            node_config.vm.network :public_network, :public_network => "eth0", :ip => node[:ip]
 
             node_config.vm.provider :virtualbox do |vb|
                 memory = node[:ram] ? node[:ram] : 256

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo apt-get install -y curl
+
 MODULES='/etc/puppet/modules:/tmp/vagrant-puppet/modules-0'
 PUPPET_TARGET='/etc/puppet/modules'
 mkdir -p $PUPPET_TARGET
