@@ -21,3 +21,4 @@ Documentation/
 .pydevproject
 .idea/
 celery/tests/cover/
+.vagrant
