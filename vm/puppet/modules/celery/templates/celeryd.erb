@@ -3,7 +3,7 @@ CELERY_BIN="/usr/local/bin/celery"
 
 CELERYD_CHDIR="<%= scope.lookupvar('baseconfig::config::project_path') %>"
 
-CELERYD_OPTS="--config=app.config"
+CELERYD_OPTS="--config=app.config --events"
 
 CELERYD_LOG_FILE="/var/log/celery/%N.log"
 CELERYD_PID_FILE="/var/run/celery/%N.pid"

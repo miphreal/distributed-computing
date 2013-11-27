@@ -7,9 +7,14 @@ domain = 'local.edu'
 # clients - 192.168.0.81 - .99
 
 nodes = [
+  { :hostname => 'mon1',      :ip => '192.168.0.21', :box => 'precise32', :ram => 256, :provision => 'mon-celery' },
+
+  # http://mq1:15672/  -- rabbitmq admin dashboard
   { :hostname => 'mq1',      :ip => '192.168.0.41', :box => 'precise32', :ram => 256, :provision => 'mq' },
+
   { :hostname => 'worker1',  :ip => '192.168.0.61', :box => 'precise32', :ram => 256, :provision => 'worker' },
   { :hostname => 'worker2',  :ip => '192.168.0.62', :box => 'precise32', :ram => 256, :provision => 'worker' },
+  { :hostname => 'worker3',  :ip => '192.168.0.63', :box => 'precise32', :ram => 256, :provision => 'worker' },
 ]
 
 Vagrant.configure("2") do |config|
@@ -38,6 +43,8 @@ Vagrant.configure("2") do |config|
             end
         end
     end
+
+
 
     config.vm.provision :shell, :path => 'vm/common.sh'
 end
