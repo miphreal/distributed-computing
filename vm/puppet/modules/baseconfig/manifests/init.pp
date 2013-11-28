@@ -9,6 +9,9 @@ class baseconfig {
     'hostmachine':
       ip => '192.168.0.101';
 
+    'mon1':
+      ip => '192.168.0.21';
+
     'mq1':
       ip => '192.168.0.41';
 
@@ -16,6 +19,8 @@ class baseconfig {
       ip => '192.168.0.61';
     'worker2':
       ip => '192.168.0.62';
+    'worker3':
+      ip => '192.168.0.63';
   }
 }
 

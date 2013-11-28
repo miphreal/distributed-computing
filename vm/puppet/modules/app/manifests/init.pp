@@ -1,9 +1,11 @@
 class app {
   include baseconfig::config
 
-  user { $baseconfig::config::project_user:
-    ensure => present,
-    shell => '/bin/bash',
+  file { $baseconfig::config::project_path:
+    source  => "/vagrant",
+    owner   => $baseconfig::config::project_user,
+    group   => $baseconfig::config::project_user,
+    recurse => true,
   } ->
   class { 'python':
     version    => 'system',
@@ -11,7 +13,7 @@ class app {
     dev        => true,
     virtualenv => true,
   } ->
-  python::requirements { $baseconfig::config::project_reqs:
+  python::requirements { '/vagrant/requirements.txt':
     virtualenv  => 'system',
   }
 }

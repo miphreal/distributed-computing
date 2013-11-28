@@ -1,3 +1,3 @@
-include baseconfig
-include app
-include celery
+class {'baseconfig':} ->
+class {'app':} ->
+class {'celery':}

@@ -1,9 +1,8 @@
 class celery {
-  group {'celery':
-    ensure  => present,
-  } ->
+  include baseconfig::config
+
   user { 'celery':
-    gid     => 'celery',
+    groups  => $baseconfig::config::project_user,
     ensure  => present,
     shell   => '/bin/bash',
   } ->
