@@ -9,5 +9,7 @@ mkdir -p $PUPPET_TARGET
 git clone https://github.com/plathrop/puppet-module-supervisor.git "$PUPPET_TARGET/supervisor"
 [ ! -d "$PUPPET_TARGET/rabbitmq" ] &&
 puppet module install --target-dir $PUPPET_TARGET --modulepath $MODULES puppetlabs-rabbitmq
+[ ! -d "$PUPPET_TARGET/redis" ] &&
+puppet module install --target-dir $PUPPET_TARGET --modulepath $MODULES fsalum/redis
 [ ! -d "$PUPPET_TARGET/python" ] &&
 puppet module install --target-dir $PUPPET_TARGET --modulepath $MODULES stankevich-python || exit 0

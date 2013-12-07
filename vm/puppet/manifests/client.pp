@@ -1,0 +1,2 @@
+class {'baseconfig':} ->
+class {'app':}

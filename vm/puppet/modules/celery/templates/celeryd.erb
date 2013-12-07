@@ -1,9 +1,9 @@
 CELERYD_NODES="<%= hostname %>a <%= hostname %>b <%= hostname %>c"
 CELERY_BIN="/usr/local/bin/celery"
 
-CELERYD_CHDIR="<%= scope.lookupvar('baseconfig::config::project_path') %>"
+CELERYD_CHDIR="<%= scope.lookupvar('baseconfig::config::project_path') %>/app"
 
-CELERYD_OPTS="--config=app.config -E --loglevel=INFO"
+CELERYD_OPTS="--config=config -E --loglevel=INFO"
 
 CELERYD_LOG_FILE="/var/log/celery/%N.log"
 CELERYD_PID_FILE="/var/run/celery/%N.pid"
