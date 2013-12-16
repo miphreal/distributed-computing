@@ -24,6 +24,11 @@ class celery {
     group   => 'root',
     mode    => 755,
   } ->
+  file { '/var/run/celery':
+    ensure  => directory,
+    owner   => 'celery',
+    group   => 'appuser',
+  } ->
   service { 'celeryd':
     ensure  => running,
     enable  => true,

@@ -12,7 +12,7 @@ user { 'flower':
 supervisor::service { 'flower':
   ensure      => present,
   directory   => $baseconfig::config::project_path,
-  command     => "/usr/local/bin/celery flower --broker_api=http://rmq_user:rmq_pass@mq1:15672/api/app --address=${hostname} --port=8080 --config=app.config",
+  command     => "/usr/local/bin/celery flower --broker_api=http://rmq_user:rmq_pass@mq1:15672/api/app --address=${hostname} --port=8080 --config=config",
   user        => 'flower',
   group       => $baseconfig::config::project_user,
 }

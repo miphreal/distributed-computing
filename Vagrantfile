@@ -14,7 +14,7 @@ nodes = [
   { :hostname => 'db1',      :ip => '192.168.0.31', :box => 'precise32', :ram => 256, :provision => 'redis' },
 
   # http://mq1:15672/  -- rabbitmq admin dashboard (http://mq1.local.edu:15672/)
-  { :hostname => 'mq1',      :ip => '192.168.0.41', :box => 'precise32', :ram => 256, :provision => 'mq' },
+  { :hostname => 'mq1',      :ip => '192.168.0.41', :box => 'precise32', :ram => 512, :provision => 'mq' },
 
   { :hostname => 'worker1',  :ip => '192.168.0.61', :box => 'precise32', :ram => 256, :provision => 'worker' },
   { :hostname => 'worker2',  :ip => '192.168.0.62', :box => 'precise32', :ram => 256, :provision => 'worker' },

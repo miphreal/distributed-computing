@@ -3,3 +3,7 @@ pytz>dev
 flower
 requests
 redis
+funcy
+numpy
+pyyaml
+nltk

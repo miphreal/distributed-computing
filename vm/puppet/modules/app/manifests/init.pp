@@ -2,7 +2,7 @@ class app {
   include baseconfig::config
 
   file { $baseconfig::config::project_path:
-    source  => "/vagrant",
+    source  => "/vagrant/app",
     owner   => $baseconfig::config::project_user,
     group   => $baseconfig::config::project_user,
     recurse => true,
